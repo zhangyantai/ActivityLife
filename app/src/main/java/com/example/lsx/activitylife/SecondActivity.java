@@ -12,7 +12,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String information=getIntent().getStringExtra("name");
+        String information=getIntent().getStringExtra(MainActivity.NAME);
         Toast.makeText(SecondActivity.this, information, Toast.LENGTH_SHORT).show();
 
     }

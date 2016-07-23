@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
@@ -15,18 +16,17 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity {
 
    private final static String TAG="MainActivity";
-    private GoogleApiClient client;
+    private  EditText edit_info=null;
+    public final static String NAME="name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         edit_info= (EditText) findViewById(R.id.edit_info);
     }
 
-    public void onClick(View v) {
-        Intent intent=new Intent(this,SecondActivity.class);
-        startActivity(intent);
-    }
+
 
     @Override
     protected void onStart() {
@@ -64,10 +64,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onDestroy: ");
     }
 
-    public void click(View v)
+    public void dial(View v)
     {
+        String info=edit_info.getText().toString().trim();
        Intent intent=new Intent(this,SecondActivity.class);
-        intent.putExtra("name","this is a test of intent transfer data");
+        intent.putExtra(NAME,info);
         startActivity(intent);
         //Toast.makeText(this, "单击信息成功",Toast.LENGTH_LONG).show();
        // Toast.makeText(MainActivity.this, "单击信息成功", Toast.LENGTH_SHORT).show();
