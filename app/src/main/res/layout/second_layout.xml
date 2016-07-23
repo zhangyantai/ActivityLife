@@ -7,7 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textshow"
-
         />
+    <EditText
+        android:id="@+id/second_activity_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/second_activity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send back"/>
 
 </LinearLayout>

@@ -67,9 +67,16 @@ public class MainActivity extends AppCompatActivity {
         String info=edit_info.getText().toString().trim();
        Intent intent=new Intent(this,SecondActivity.class);
         intent.putExtra(NAME,info);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
+       // startActivity(intent);
         //Toast.makeText(this, "单击信息成功",Toast.LENGTH_LONG).show();
        // Toast.makeText(MainActivity.this, "单击信息成功", Toast.LENGTH_SHORT).show();
     }
-  
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        String name = data.getStringExtra("back");
+        Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+    }
 }
