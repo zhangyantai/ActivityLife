@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/edit_info"
         android:layout_weight="1"
-
         />
 
 
