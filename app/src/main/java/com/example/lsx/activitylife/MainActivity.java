@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -65,8 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void click(View v)
     {
-        Intent intent=new Intent(this,SecondActivity.class);
+       Intent intent=new Intent(this,SecondActivity.class);
+        intent.putExtra("name","this is a test of intent transfer data");
         startActivity(intent);
+        //Toast.makeText(this, "单击信息成功",Toast.LENGTH_LONG).show();
+       // Toast.makeText(MainActivity.this, "单击信息成功", Toast.LENGTH_SHORT).show();
     }
   
 }
